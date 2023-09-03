@@ -6,7 +6,7 @@ const anvorgesa = document.querySelector('.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 /*carrito*/
 const menuCarritoIcon = document.querySelector('.navbar-shopping-cart');
-const aside = document.querySelector('.product-detail');
+const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
 
 /* cards-container*/
 const cardsContainer = document.querySelector('.cards-container')
@@ -16,15 +16,15 @@ anvorgesa.addEventListener('click', toggleMobileMenu);
 menuCarritoIcon.addEventListener('click', toggleCarritoMenu);
 
 function toggleDesktopMenu () {
-    if (!aside.classList.contains('inactive')) {
-        aside.classList.add('inactive');
+    if (!shoppingCartContainer.classList.contains('inactive')) {
+        shoppingCartContainer.classList.add('inactive');
     }
     desktopMenu.classList.toggle('inactive'); 
 }
 
 function toggleMobileMenu () {
-    if (!aside.classList.contains('inactive')) {
-        aside.classList.add('inactive');
+    if (!shoppingCartContainer.classList.contains('inactive')) {
+        shoppingCartContainer.classList.add('inactive');
     }
     mobileMenu.classList.toggle('inactive');
 }
@@ -36,7 +36,7 @@ function toggleCarritoMenu () {
     if (!desktopMenu.classList.contains('inactive')) {
         desktopMenu.classList.add('inactive');
     }
-    aside.classList.toggle('inactive');
+    shoppingCartContainer.classList.toggle('inactive');
 }
 
 const productList = []
@@ -82,7 +82,7 @@ for (product of productList) { /* iterate over an array of products */
 
     const productInfoDiv = document.createElement('div');
     const productPrice = document.createElement('p');
-    productPrice.innerText = '$' +product.price;
+    productPrice.innerText = '$' + product.price;
     const productName = document.createElement('p');
     productName.innerText = product.name;
     productInfoDiv.append(productPrice, productName);
